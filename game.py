@@ -34,3 +34,17 @@ def game_over():
 
 
 window = Tk()
+window.title("Annix Snake game")
+window.resizable(False,False)
+
+score = 0
+direction = 'down'
+
+label = Label(window, text="Score : {}".format(score), font=('Poppins', 20)) # so i know this might seems a lot but its just myself adding a text and a font-fam
+label.pack() #pack is basically displaying
+
+canvas = Canvas(window, bg=BG_COLOR, height= GAME_HEIGHT , width = GAME_WIDTH)
+canvas.pack()
+
+
+window.mainloop()
