@@ -114,7 +114,7 @@ def check_collisions(snake):
     return False
 def game_over():
     canvas.delete(ALL)
-    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,font=("Poppins", 50), text="GAME_OVER-", fill="red", tag="gameover")
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,font=("Pixel Operator Mono HB 8", 40), text="GAME_OVER", fill="red", tag="gameover")
 
 window = Tk()
 window.title("Annix Snake game")
@@ -123,7 +123,7 @@ window.resizable(False,False)
 score = 0
 direction = 'down'
 
-label = Label(window, text="Score : {}".format(score), font=('Poppins', 20)) # so i know this might seems a lot but its just myself adding a text and a font-fam
+label = Label(window, text="Score : {}".format(score), font=('Pixel Operator Mono HB', 20)) # so i know this might seems a lot but its just myself adding a text and a font-fam
 label.pack() #pack is basically displaying
 
 canvas = Canvas(window, bg=BG_COLOR, height= GAME_HEIGHT , width = GAME_WIDTH)
