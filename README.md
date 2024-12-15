@@ -23,7 +23,7 @@ This is a simple and fun implementation of the Snake Game, where the player cont
 ## 📸 **Screenshots**
 
 ### Game Window Example 1:
-![Screenshot 1](img src="image.png")
+![Screenshot 1](image.png)
 
 ### Game Over Screen Example:
 ![Screenshot 2](image2.jpg)
