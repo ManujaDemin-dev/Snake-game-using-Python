@@ -5,9 +5,9 @@ import random
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 50 #HELLO IM JUST ASSUMING THIS IS 50 FOR NOW
+SPEED = 50 #HELLO IM JUST ASSUMING THIS IS 50 FOR NOW higher the number sppeder it gets
 SPACE_SIZE = 50
-BODY_PART_START = 3
+BODY_PART_START = 10
 SNAKE_COLOR = "#00f5c0" #   this is for my first version
 FOOD_COLOR = "#FF0000" # RED FOR FOOD 
 BG_COLOR = "#000000" #BLACK hmm... yh ig mybe ill create a light version as well... 0w0
@@ -72,7 +72,11 @@ def next_turn(snake,food):
 
         del snake.squares[-1]
     
-    window.after(SPEED, next_turn, snake, food)
+    if check_collisions(snake):
+        game_over()
+    
+    else:
+        window.after(SPEED, next_turn, snake, food)
 
 def change_direct(new_direct):
 
@@ -94,12 +98,23 @@ def change_direct(new_direct):
         if direction != 'up':
             direction = new_direct
 
-def check_collisions():
-    pass
+def check_collisions(snake):
+    x , y = snake.coordinates[0]
 
+    if x < 0 or x >= GAME_WIDTH:
+        return True
+    
+    elif y < 0 or y >= GAME_HEIGHT:
+        return True
+    
+    for body_part in snake.coordinates[1:]:
+        if x == body_part[0] and y == body_part[1]:
+            return True
+
+    return False
 def game_over():
-    pass
-
+    canvas.delete(ALL)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,font=("Poppins", 50), text="GAME_OVER-", fill="red", tag="gameover")
 
 window = Tk()
 window.title("Annix Snake game")
