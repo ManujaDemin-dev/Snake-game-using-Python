@@ -1,8 +1,6 @@
 # **🐍 Snake Game - using Python**
-
-### Created by: **Anonixli (Manuja Demin)**
-
 Welcome to my version of the classic Snake Game built using **Python** and **Tkinter**! 🎮
+### Created by: **Anonixli (Manuja Demin)**
 
 ---
 
